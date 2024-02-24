@@ -1,6 +1,3 @@
-
-import React from 'react';
-
 // Logo component
 function Logo() {
     const appName = "Fathi's Pokedex";
@@ -11,4 +8,6 @@ function Logo() {
       </header>
     );
   }
+  
+  export default Logo
   
