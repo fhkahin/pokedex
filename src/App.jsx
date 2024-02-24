@@ -1,12 +1,36 @@
 import React from 'react';
 
+
+// BestPokemon component
+function BestPokemon() {
+  const abilities = ['Anticipation', 'Adaptability', 'Run-Away'];
+  return (
+    <div>
+      <p>Best Pokemon:</p>
+      <ul>
+        {abilities.map((ability, index) => (
+          <li key={index}>{ability}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// CaughtPokemon component
+function CaughtPokemon() {
+  const date = new Date().toLocaleDateString();
+  return (
+    <p>Caught 0 Pokemon on {date}</p>
+  );
+}
+
+// App component
 function App() {
   return (
     <div>
-      <header>
-        <h1>Welcome to the Pokedex</h1>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png" alt="Pokemon" />
-      </header>
+      <Logo />
+      <BestPokemon />
+      <CaughtPokemon />
     </div>
   );
 }
