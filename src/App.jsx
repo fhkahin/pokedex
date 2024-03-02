@@ -1,36 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Logo from './Logo.jsx';
+import BestPokemon from './BestPokemon.jsx';
+import CaughtPokemon from './CaughtPokemon.jsx';
 
-
-// BestPokemon component
-function BestPokemon() {
-  const abilities = ['Anticipation', 'Adaptability', 'Run-Away'];
-  return (
-    <div>
-      <p>Best Pokemon:</p>
-      <ul>
-        {abilities.map((ability, index) => (
-          <li key={index}>{ability}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-// CaughtPokemon component
-function CaughtPokemon() {
-  const date = new Date().toLocaleDateString();
-  return (
-    <p>Caught 0 Pokemon on {date}</p>
-  );
-}
-
-// App component
 function App() {
+  const [caughtPokemon, setCaughtPokemon] = useState([]);
+
+  const handleCatchPokemon = (pokemonName) => {
+    setCaughtPokemon([...caughtPokemon, pokemonName]);
+  };
+
   return (
     <div>
-      <Logo />
+      <Logo appName="Fathi" handleLogoClick={handleCatchPokemon} />
       <BestPokemon />
-      <CaughtPokemon />
+      <CaughtPokemon caughtPokemon={caughtPokemon} />
     </div>
   );
 }

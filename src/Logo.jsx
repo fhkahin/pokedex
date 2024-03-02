@@ -1,13 +1,19 @@
-// Logo component
-function Logo() {
-    const appName = "Fathi's Pokedex";
-    return (
-      <header>
+import React from 'react';
+import imageurl from './assets/Pokemon-Logo-PNG-Pic.png';
+
+function Logo({ appName, handleLogoClick }) {
+  const handleClick = () => {
+    handleLogoClick('Pikachu'); // You can choose any default Pokemon name here
+  };
+
+  return (
+    <header>
+      <div>
         <h1>{appName}</h1>
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png" alt="Pokemon" />
-      </header>
-    );
-  }
-  
-  export default Logo
-  
+      </div>
+      <img className='image' src={imageurl} alt="Pokemon Logo" onClick={handleClick} />
+    </header>
+  );
+}
+
+export default Logo;
