@@ -3,10 +3,9 @@ import imageurl from './assets/Pokemon-Logo-PNG-Pic.png';
 
 function Logo({ appName, handleLogoClick }) {
   const handleClick = () => {
-    handleLogoClick('Pikachu'); // You can choose any default Pokemon name here
+    handleLogoClick('Pikachu'); // I will choose any default Pokemon name here
   };
 
-  return (
     <header>
       <div>
         <h1>{appName}</h1>

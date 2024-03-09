@@ -4,8 +4,7 @@ import BestPokemon from './BestPokemon.jsx';
 import CaughtPokemon from './CaughtPokemon.jsx';
 
 function App() {
-  const [caughtPokemon, setCaughtPokemon] = useState(['Mewtwo', 'Rayquaza', 'Arceus', 'Gengar', 'Charizard', 'Dragonite', 'Kyogre', 'Kyurem', 'Tyranitar';
-]);
+  const [caughtPokemon, setCaughtPokemon] = useState([]);
 
   const handleCatchPokemon = (pokemonName) => {
     setCaughtPokemon([...caughtPokemon, pokemonName]);
