@@ -1,6 +1,6 @@
 import React from "react";
 
-function PokemonMoves() {
+function PokemonMoves({ pokemonData }) {
   if (pokemonData) {
     return (
       <div>

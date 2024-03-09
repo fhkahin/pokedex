@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BestPokemon from "./BestPokemon"; // Import BestPokemon component
 
 function BestPokemonFetcher() {
   const [pokemon, setPokemon] = useState(null);
@@ -16,19 +17,6 @@ function BestPokemonFetcher() {
   } else {
     return <BestPokemon pokemon={pokemon} />;
   }
-}
-
-function BestPokemon(props) {
-  return (
-    <div>
-      <p>{props.pokemon.name}</p>
-      <ul>
-        {props.pokemon.abilities.map(ability => {
-          return <li>{ability.ability.name}</li>;
-        })}
-      </ul>
-    </div>
-  );
 }
 
 export default BestPokemonFetcher;
