@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useState } from "react";
 
-function CaughtPokemon({ caughtPokemon }) {
-  const date = new Date().toLocaleDateString();
+function CaughtPokemon() {
+  const [caughtPokemon, setCaughtPokemon] = useState([]);
+  const [pokemonNameInput, setPokemonNameInput] = useState("");
+
+  function catchPokemon() {
+    if (!pokemonNameInput) {
+      return;
+    }
+
+    setCaughtPokemon(caughtPokemon.concat(pokemonNameInput));
+    setPokemonNameInput("");
+  }
+
+  function handleInputChange(event) {
+    setPokemonNameInput(event.target.value);
+  }
+
   return (
     <div>
-      <p>Caught {caughtPokemon.length} Pokemon on {date}</p>
+      <input
+        type="text"
+        value={pokemonNameInput}
+        onChange={handleInputChange}
+      />
+      <button onClick={catchPokemon}>Catch Pokemon</button>
       <ul>
-        {caughtPokemon.map((pokemon, index) => (
-          <li key={index}>{pokemon}</li>
+        {caughtPokemon.map(pokemon => (
+          <li key={pokemon}>{pokemon}</li>
         ))}
       </ul>
     </div>

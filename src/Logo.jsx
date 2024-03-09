@@ -6,6 +6,7 @@ function Logo({ appName, handleLogoClick }) {
     handleLogoClick('Pikachu'); // I will choose any default Pokemon name here
   };
 
+  return ( // Add the return statement here
     <header>
       <div>
         <h1>{appName}</h1>
