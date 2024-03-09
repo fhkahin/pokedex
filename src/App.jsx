@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Logo from './Logo.jsx';
-import BestPokemon from './BestPokemon.jsx';
+import BestPokemon from './BestPokemonFetcher.jsx';
 import CaughtPokemon from './CaughtPokemon.jsx';
+import PokemonMoves from "./PokemonMoves";
+import BestPokemonSelector from "./BestPokemonSelector";
+
 
 function App() {
   const [caughtPokemon, setCaughtPokemon] = useState([]);
@@ -13,7 +16,8 @@ function App() {
   return (
     <div>
       <Logo appName="Fathi" handleLogoClick={handleCatchPokemon} />
-      <BestPokemon />
+      <BestPokemonFetcher />
+      <PokemonMoves />
       <CaughtPokemon caughtPokemon={caughtPokemon} />
     </div>
   );
